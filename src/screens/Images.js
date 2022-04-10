@@ -5,10 +5,10 @@ const Images = () => {
   return (
     <View style={styles.listStyle}>
       <Text style={styles.textStyle}>This is my Image</Text>  
+      {/* <Image style={styles.imageStyle} source={require("../../assets/img1.png")} ></Image>
       <Image style={styles.imageStyle} source={require("../../assets/img1.png")} ></Image>
       <Image style={styles.imageStyle} source={require("../../assets/img1.png")} ></Image>
-      <Image style={styles.imageStyle} source={require("../../assets/img1.png")} ></Image>
-      <Image style={styles.imageStyle} source={require("../../assets/img1.png")} ></Image>
+      <Image style={styles.imageStyle} source={require("../../assets/img1.png")} ></Image> */}
     </View>
   );
 };
