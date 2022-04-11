@@ -4,6 +4,8 @@ import CustomComponent from "./src/screens/CustomComponent";
 import FlatListDemo from "./src/screens/FlatListDemo";
 import Images from "./src/screens/Images";
 import Netflix from "./src/screens/Netflix";
+import CounterNumber from "./src/screens/CounterNumber";
+import ColorGenerator from "./src/screens/ColorGenerator";
 
 const App = () => {
   // const myName = "Deep Manohar Lahane";
@@ -21,8 +23,8 @@ const App = () => {
       <CustomComponent/> */}
       {/* <FlatListDemo/> */}
       {/* <Images/> */}
-      <Text style={styles.textStyle}>Netflix Cards</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+      {/* <Text style={styles.textStyle}>Netflix Cards</Text> */}
+      {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <Netflix />
         <Netflix />
         <Netflix />
@@ -33,7 +35,9 @@ const App = () => {
         <Netflix />
         <Netflix />
         <Netflix />
-      </ScrollView>
+      </ScrollView> */}
+      {/* <CounterNumber /> */}
+      <ColorGenerator/>
     </View>
   );
 };
