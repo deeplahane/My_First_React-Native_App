@@ -1,4 +1,4 @@
-import React from "react";
+import react from "react";
 import { View, Image, Text, StyleSheet, Button, Linking } from "react-native";
 import {
   JosefinSans_100Thin,
@@ -19,8 +19,9 @@ import {
 
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
+import { useEffect } from "react";
 
-const Netflix = () => {
+const Netflix = ({name,image,description}) => {
   let [fontsLoad,error] = useFonts({
     JosefinSans_100Thin,
     JosefinSans_200ExtraLight,
@@ -38,6 +39,8 @@ const Netflix = () => {
     JosefinSans_700Bold_Italic,
   });
 
+  
+
   if (!fontsLoad) {
     return <AppLoading />;
   }
@@ -45,16 +48,17 @@ const Netflix = () => {
   return (
     <View style={styles.firstView}>
       {/* <Text style={styles.textStyle}>Netflix Card</Text> */}
-      <View style={styles.secondView}>
+      <View  style={styles.secondView}>
         <Image
           style={styles.imgStyle}
-          source={require("../../assets/img3.jpeg")}
+          source={{
+            uri: image,
+          }}
         />
         <View style={styles.posterInfo}>
-          <Text style={styles.movieName}>RRR</Text>
+          <Text style={styles.movieName}>{name}</Text>
           <Text style={styles.someText}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius velit
-            placeat architecto nostrum molestias exercitationem debitis sint{" "}
+            {description}
           </Text>
         </View>
         <Button

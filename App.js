@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState,useEffect} from "react";
 import { Text, StyleSheet, View, FlatList, ScrollView } from "react-native";
 import CustomComponent from "./src/screens/CustomComponent";
 import FlatListDemo from "./src/screens/FlatListDemo";
@@ -6,9 +6,27 @@ import Images from "./src/screens/Images";
 import Netflix from "./src/screens/Netflix";
 import CounterNumber from "./src/screens/CounterNumber";
 import ColorGenerator from "./src/screens/ColorGenerator";
+import HookEffect from "./src/screens/HookEffect";
 
 const App = () => {
   // const myName = "Deep Manohar Lahane";
+
+  const [netflixCardData,setNetFlixCardData]= useState([]);
+
+  const getUserData =async ()=>{
+    try {
+         const response =await fetch("https://thapatechnical.github.io/userapi/users.json");
+         const myData = await response.json();
+         setNetFlixCardData(myData);
+        console.log(myData);
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+useEffect(()=>{
+    getUserData();
+},[])
 
   return (
     <View>
@@ -23,21 +41,17 @@ const App = () => {
       <CustomComponent/> */}
       {/* <FlatListDemo/> */}
       {/* <Images/> */}
-      {/* <Text style={styles.textStyle}>Netflix Cards</Text> */}
-      {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        <Netflix />
-        <Netflix />
-        <Netflix />
-        <Netflix />
-        <Netflix />
-        <Netflix />
-        <Netflix />
-        <Netflix />
-        <Netflix />
-        <Netflix />
+      {/* <Text style={styles.textStyle}>Netflix Cards</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {
+          netflixCardData.map((data,index)=>
+          <Netflix description={data.description} key={index}  image={data.image} name={data.name}  />
+          )
+        }
       </ScrollView> */}
       {/* <CounterNumber /> */}
       <ColorGenerator/>
+      {/* <HookEffect/> */}
     </View>
   );
 };
