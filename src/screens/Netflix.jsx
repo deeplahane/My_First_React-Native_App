@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { View, Image, Text, StyleSheet, Button, Linking } from "react-native";
 import {
   JosefinSans_100Thin,
