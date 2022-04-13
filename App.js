@@ -7,6 +7,7 @@ import Netflix from "./src/screens/Netflix";
 import CounterNumber from "./src/screens/CounterNumber";
 import ColorGenerator from "./src/screens/ColorGenerator";
 import HookEffect from "./src/screens/HookEffect";
+import ContactYoutube from "./src/screens/ContactYoutube";
 
 const App = () => {
   // const myName = "Deep Manohar Lahane";
@@ -50,8 +51,9 @@ useEffect(()=>{
         }
       </ScrollView> */}
       {/* <CounterNumber /> */}
-      <ColorGenerator/>
+      {/* <ColorGenerator/> */}
       {/* <HookEffect/> */}
+      <ContactYoutube />
     </View>
   );
 };
