@@ -8,53 +8,39 @@ import CounterNumber from "./src/screens/CounterNumber";
 import ColorGenerator from "./src/screens/ColorGenerator";
 import HookEffect from "./src/screens/HookEffect";
 import ContactYoutube from "./src/screens/ContactYoutube";
+import {NavigationContainer} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import HomeYoutube from "./src/screens/HomeYoutube";
 
 const App = () => {
   // const myName = "Deep Manohar Lahane";
+  const Stack = createNativeStackNavigator();
 
-  const [netflixCardData,setNetFlixCardData]= useState([]);
+  // const [netflixCardData,setNetFlixCardData]= useState([]);
 
-  const getUserData =async ()=>{
-    try {
-         const response =await fetch("https://thapatechnical.github.io/userapi/users.json");
-         const myData = await response.json();
-         setNetFlixCardData(myData);
-        console.log(myData);
-    } catch (error) {
-        console.log(error);
-    }
-}
+//   const getUserData =async ()=>{
+//     try {
+//          const response =await fetch("https://thapatechnical.github.io/userapi/users.json");
+//          const myData = await response.json();
+//          setNetFlixCardData(myData);
+//         console.log(myData);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
-useEffect(()=>{
-    getUserData();
-},[])
+// useEffect(()=>{
+//     getUserData();
+// },[])
 
   return (
-    <View>
-      {/* <Text>this is some text</Text> */}
-      {/* <Text style={styles.textStyle}> Hello World... App.js component </Text> */}
-      {/* <Text style={styles.textStyle} >Welcome to thapa technical channel</Text>
-      <Text style={styles.textSty} >We love react native and I am a subscriber of thapa technical channel</Text>
-      <Text>my name is {myName}.</Text> */}
-      {/* <CustomComponent/>
-      <CustomComponent/>
-      <CustomComponent/> 
-      <CustomComponent/> */}
-      {/* <FlatListDemo/> */}
-      {/* <Images/> */}
-      {/* <Text style={styles.textStyle}>Netflix Cards</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {
-          netflixCardData.map((data,index)=>
-          <Netflix description={data.description} key={index}  image={data.image} name={data.name}  />
-          )
-        }
-      </ScrollView> */}
-      {/* <CounterNumber /> */}
-      {/* <ColorGenerator/> */}
-      {/* <HookEffect/> */}
-      <ContactYoutube />
-    </View>
+   
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="login">
+          <Stack.Screen name="login" component={ContactYoutube} />
+          <Stack.Screen name="home" component={HomeYoutube} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
@@ -77,3 +63,30 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
+// to view other screens...
+ // <View>
+      {/* <Text>this is some text</Text> */}
+      {/* <Text style={styles.textStyle}> Hello World... App.js component </Text> */}
+      {/* <Text style={styles.textStyle} >Welcome to thapa technical channel</Text>
+      <Text style={styles.textSty} >We love react native and I am a subscriber of thapa technical channel</Text>
+      <Text>my name is {myName}.</Text> */}
+      {/* <CustomComponent/>
+      <CustomComponent/>
+      <CustomComponent/> 
+      <CustomComponent/> */}
+      {/* <FlatListDemo/> */}
+      {/* <Images/> */}
+      {/* <Text style={styles.textStyle}>Netflix Cards</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        {
+          netflixCardData.map((data,index)=>
+          <Netflix description={data.description} key={index}  image={data.image} name={data.name}  />
+          )
+        }
+      </ScrollView> */}
+      {/* <CounterNumber /> */}
+      {/* <ColorGenerator/> */}
+      {/* <HookEffect/> */}
+     {/* <ContactYoutube /> */}
+     {/* </View> */}
